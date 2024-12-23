@@ -1,6 +1,6 @@
 import socket
 import struct
-import mqtt
+import mqtt_publ
 
 ip = "192.168.1.50"
 port = 4444
@@ -11,7 +11,7 @@ s.bind(server_address)
 
 print(f"Server in ascolto su {ip}:{port}")
 
-mqtt_publisher  =  mqtt.mqtt_publisher()
+mqtt_publisher  =  mqtt_publ.mqtt_publisher()
 
 while True:
     data, address = s.recvfrom(4096)  # Ricevi fino a 4096 byte
