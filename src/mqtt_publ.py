@@ -28,9 +28,10 @@ class mqtt_publisher:
             print(f"Error connecting to the broker: {e}")
 
 
-    def publish_data(self, macAddress, timestamp, data):
+    def publish_data(self, macAddress, timestamp, device, data):
         payload = { "macAddress":macAddress,
                     "timestamp":timestamp,
+                    "device":device,
                     "data":data}
         
         payload_json = json.dumps(payload)

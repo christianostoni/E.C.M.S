@@ -22,8 +22,9 @@ def on_message(client, userdata, message):
     payload = json.loads(message.payload.decode())
     macAddress = payload["macAddress"]
     timestamp = payload["timestamp"]
+    device = payload["device"]
     data = payload["data"]
-    mysql.insertData(timestamp, macAddress, data)
+    mysql.insertData(timestamp, device, macAddress, data)
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2,"subscriper_raspberry")
 client.tls_set(ca_certs='./../emqxsl-ca.crt')

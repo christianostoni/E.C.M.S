@@ -19,9 +19,10 @@ while True:
         # Decodifica il pacchetto (6 byte MAC, 4 byte timestamp, 1 byte valore randomico)
         mac_address = ":".join(f"{b:02x}" for b in data[0:6])  # MAC address
         timestamp = int.from_bytes(data[6:10], byteorder='big')  # Timestamp (big-endian)
-        random_value = data[10]  # Valore randomico (1 byte)
+        device = data[10]
+        random_value = data[11]  # Valore randomico (1 byte)
 
         try:
-            mqtt_publisher.publish_data(mac_address, timestamp, random_value)
+            mqtt_publisher.publish_data(mac_address, timestamp, device, random_value)
         except Exception as e:
             print(f"Errore durante l'invio dei dati MQTT: {e}")

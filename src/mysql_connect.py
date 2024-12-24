@@ -17,11 +17,11 @@ class mysqlConnect:
             print(f"mysql_connect.py:  Error connecting to MySQL database: {e}")
         
     
-    def insertData(self, timestamp, macAddress, data):
+    def insertData(self, timestamp, device,macAddress, data):
         try: 
             with self.connection.cursor() as cursor:
                 #devo convertire il timestamp da unix in datetime(fomato UTC)
-                query = f"INSERT INTO energy_consumption (updated_at, mac_address, sensorData) VALUES (FROM_UNIXTIME({timestamp}), '{macAddress}', {data})"
+                query = f"INSERT INTO energy_consumption (updated_at, idDevice,  macAddress, sensorData) VALUES (FROM_UNIXTIME({timestamp}), '{device}','{macAddress}', {data})"
                 cursor.execute(query)
                 self.connection.commit()
         except Error as e:
