@@ -3,7 +3,7 @@ import json
 import random
 class mqtt_publisher:
     def __init__(self):
-        broker_address = "xaa9b307.ala.us-east-1.emqxsl.com"
+        broker_address = "c1f11fe0.ala.us-east-1.emqxsl.com"
         broker_port = 8883
         username = "christian"
         password = "christian123"

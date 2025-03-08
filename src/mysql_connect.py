@@ -7,7 +7,7 @@ class mysqlConnect:
         user = "avnadmin"
         port = 18075
         password = "AVNS_RX806IjWRMWo9uSR8u0"
-        database = "ECMS_demo_db"
+        database = "ECMS_DB"
 
         try:
             self.connection = connect(host=host, user=user, password=password, database=database, port=port)

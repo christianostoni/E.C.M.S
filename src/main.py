@@ -1,8 +1,10 @@
+'''
+    questo è il file per il server udp. Decodifica i pacchetti udp e invia i dati al broker mqtt
+'''
 import socket
-import struct
 import mqtt_publ
 
-ip = "192.168.1.50"
+ip = "127.0.0.1"
 port = 4444
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
