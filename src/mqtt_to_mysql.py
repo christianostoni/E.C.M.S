@@ -3,7 +3,7 @@ import random
 import mysql_connect
 import json
 
-broker_address = "xaa9b307.ala.us-east-1.emqxsl.com"
+broker_address = "c4a6477a.ala.eu-central-1.emqxsl.com"
 broker_port = 8883
 client_id = f'python-mqtt-{random.randint(0, 100)}'
 username = 'christian'

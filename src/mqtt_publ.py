@@ -3,13 +3,15 @@ import json
 import random
 class mqtt_publisher:
     def __init__(self):
-        broker_address = "c1f11fe0.ala.us-east-1.emqxsl.com"
+        broker_address = "c4a6477a.ala.eu-central-1.emqxsl.com"
         broker_port = 8883
         username = "christian"
         password = "christian123"
         client_id = f'python-mqtt-{random.randint(0, 100)}'
         self.topic = "energy_consumption"
-        def on_connect(self,client, userdata, flags, rc):
+        def on_connect(self,client:mqtt, userdata, flags, rc):
+            print(type(rc))
+            print(rc)
             if rc == 0:
                 print("Connected to MQTT Broker!")
             else:
@@ -21,6 +23,7 @@ class mqtt_publisher:
         self.client.on_connect = on_connect
 
         try:
+            print("test1")
             self.client.connect(broker_address, broker_port)
             print("Connection attempt successful")
             self.client.loop_start()
