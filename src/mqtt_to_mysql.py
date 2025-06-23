@@ -24,6 +24,7 @@ def on_message(client, userdata, message):
     timestamp = payload["timestamp"]
     device = payload["device"]
     data = payload["data"]
+    print(data)
     mysql.insertData(timestamp, device, macAddress, data)
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2,"subscriper_raspberry")
