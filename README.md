@@ -31,21 +31,10 @@ Attraverso l’uso di microcontrollori ESP8266, sensori di corrente ACS712 e una
 ecms/
 ├── arduino/              # Codice ESP8266
 │   └── ecms_device.ino
-├── python/               # Codice server Python su Raspberry Pi
+├── src/                  # Codice server Python su Raspberry Pi
 │   ├── main.py
 │   ├── mqtt_to_mysql.py
 │   └── mqtt_publisher.py
-├── sql/                  # Script e struttura database
-│   └── schema.sql
-├── grafana/              # File JSON per dashboard Grafana
-│   └── ecms_dashboard.json
-├── pcb/                  # File KiCad per la PCB
-│   └── ecms_pcb.kicad_pro
-├── 3d_print/             # STL del case stampato in 3D
-│   ├── top_case.stl
-│   └── bottom_case.stl
-├── docs/                 # Documentazione tecnica
-│   └── ECMS_Documentation.pdf
 └── README.md
 ```
 
